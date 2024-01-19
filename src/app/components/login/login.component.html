@@ -1,0 +1,15 @@
+<form [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()" class="d-grid gap-1 col-6 mx-auto">
+    <h2 class="text-center">login</h2>
+    <div class="mb-1">
+        <label for="login" class="form-label">Email address</label>
+        <input type="email" formControlName="email" class="form-control" placeholder="name@example.com">
+    </div>
+    <div class="mb-1">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" formControlName="password" class="form-control">
+    </div>
+    <div class="mb-1">
+        <button type="submit" class="btn btn-primary" [disabled]="loginFormGroup.invalid">Submit</button>
+    </div>
+</form> 
+

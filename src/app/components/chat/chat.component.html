@@ -1,17 +1,19 @@
-<p>chat works! g</p>
+<app-header></app-header>
 
-<div>
-    connected: {{isConnected}}
+<div class="container">
+    <div>
+        connected: {{isConnected}}
+    </div>
+
+    <form [formGroup]="chatFormGroup" (ngSubmit)="onSubmit()">
+        <input type="text" formControlName="message">
+        <input type="submit" class="btn btn-success" value="send" [disabled]="chatFormGroup.invalid">
+    </form>
+
+    <h3>messages</h3>
+    <ul>
+        <li *ngFor="let message of messages">
+            {{message.from}} - {{message.message}} - {{message.created}}
+        </li> 
+    </ul>
 </div>
-
-<form [formGroup]="chatFormGroup" (ngSubmit)="onSubmit()">
-    <input type="text" formControlName="message">
-    <input type="submit" value="send" [disabled]="chatFormGroup.invalid">
-</form>
-
-<h3>messages</h3>
-<ul>
-    <li *ngFor="let message of messages">
-        {{message.from}} - {{message.message}} - {{message.created}}
-    </li> 
-</ul>
