@@ -1,0 +1,8 @@
+<div class="d-grid gap-1 col-6 mx-auto">
+    <h4>login</h4>
+<form [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="email">
+    <input type="password" formControlName="password">
+    <button type="submit" class="btn btn-success" [disabled]="loginFormGroup.invalid">login</button>
+</form>
+</div>

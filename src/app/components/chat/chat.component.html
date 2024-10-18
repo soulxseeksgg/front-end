@@ -1,0 +1,13 @@
+<div>
+    connected: {{isConnected}}
+  </div>
+<form [formGroup]="chatFormGroup" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="message">
+    <button type="submit" class="btn btn-danger">Submit</button>
+</form>
+<ul>                  
+  <li *ngFor="let message of messages">
+    {{message.from}} - {{message.message}} - {{message.created}}
+  </li>                      
+</ul>  
+
